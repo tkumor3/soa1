@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="soa1:war exploded">
+    <output-path>$PROJECT_DIR$/target/soa1</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="soa1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jboss.jboss-embeddable-ejb3:jboss-ejb3-all:1.0.0.Alpha9" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/soa1/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="soa1/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,49 @@
+<xs:schema xmlns:tns="http://ear.lab1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://ear.lab1/" version="1.0">
+
+  <xs:element name="Persons" type="tns:personMagazin"/>
+
+  <xs:element name="addPerson" type="tns:addPerson"/>
+
+  <xs:element name="addPersonResponse" type="tns:addPersonResponse"/>
+
+  <xs:element name="allUsers" type="tns:allUsers"/>
+
+  <xs:element name="allUsersResponse" type="tns:allUsersResponse"/>
+
+  <xs:complexType name="addPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="surname" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addPersonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="rezultat" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="allUsers">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="allUsersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="List_Persons" type="tns:personMagazin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="personMagazin">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Person" type="tns:person"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="surname" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

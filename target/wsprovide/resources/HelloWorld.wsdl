@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="HelloWorld" targetNamespace="http://ear.lab1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://ear.lab1/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://ear.lab1/" schemaLocation="ProjectSoaService_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="addPerson">
+    <wsdl:part name="parameters" element="ns1:addPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="allUsersResponse">
+    <wsdl:part name="parameters" element="ns1:allUsersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="allUsers">
+    <wsdl:part name="parameters" element="ns1:allUsers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPersonResponse">
+    <wsdl:part name="parameters" element="ns1:addPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloWorld">
+    <wsdl:operation name="addPerson">
+      <wsdl:input name="addPerson" message="ns1:addPerson">
+    </wsdl:input>
+      <wsdl:output name="addPersonResponse" message="ns1:addPersonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allUsers">
+      <wsdl:input name="allUsers" message="ns1:allUsers">
+    </wsdl:input>
+      <wsdl:output name="allUsersResponse" message="ns1:allUsersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

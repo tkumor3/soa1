@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ProjectSoaService" targetNamespace="http://hello.world.ns/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://hello.world.ns/" xmlns:ns1="http://ear.lab1/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:import namespace="http://ear.lab1/" location="HelloWorld.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="ProjectSoaServiceSoapBinding" type="ns1:HelloWorld">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addPerson">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPerson">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPersonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allUsers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="allUsers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="allUsersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProjectSoaService">
+    <wsdl:port name="ProjectSoaPort" binding="tns:ProjectSoaServiceSoapBinding">
+      <soap:address location="http://localhost:9090/ProjectSoaPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
